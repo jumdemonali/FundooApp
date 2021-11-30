@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/signup.css">
+	 <link rel="stylesheet" href="../Js/validation.js">
     <title>SignUp</title>
 </head>
 <body>
@@ -20,35 +21,46 @@
                     <div class="signup-text1">Create your Google Account</div>
                 </div>
 
-                <div class="row1">
-                    <input type="text" name="name" id="name" class="input" placeholder="First Name" required="">
-                    <input type="text" name="name" id="name" class="input" placeholder="Last Name" required="">
-                </div>
-
-                <div class="userinp">
-                    <input type="text" name="name" id="name" class="input" placeholder="UserName" required="">
-                </div>
-                   
-              
+                <div class="container">
+                    <div class="formfield" id="firstnamefield">
+                        <input type="text" name="firstname" id="firstname" required>
+                        <label alt="Prénom" for="firstname" placeholder="First Name">First Name</label>
+                    </div>
+                    <div class="formfield" id="lastnamefield">
+                        <input type="text" name="lastname" id="lastname" required>
+                        <label alt="Nom" for="lastname" placeholder="Nom">Last Name</label>
+                    </div>
+                    <div class="formfield" id="addressfield">
+                        <input type="text" name="address" id="address" required>
+                        <label alt="Adresse" for="address" placeholder="Username">Username</label>
+                        <span>You can use letters,numbers & periods</span>
+                    </div>
                 
-
-                <div class="row2">
-                    <input type="password" name="name" id="name" class="input" placeholder="Password" required="">
-                    <input type="password" name="name" id="name" class="input" placeholder="Confirm" required="">
                 </div>
-
+                    <div class="signInPageBtn">Use my current email address instead</div>           
+                    <div class="container">
+                <div class="formfield" id="password">
+                    <input type="password" name="pass" id="password" required>
+                    <label alt="Nom" for="password" placeholder="pas">Password</label>
+                 </div>
+                 <div class="formfield" id="confirm">
+                    <input type="password" name="pass" id="password" required>
+                    <label alt="Nom" for="password" placeholder="pas">Confirm</label>
+                 </div>
+                <span> Use 8 or more characters with a mix of letters, numbers & symbols</span>
+                    </div>
                 <div style>
-                    <FormControl class="checkBox-container">
+                    <div class="checkBox-container">
                         <div>
                             <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
                             <label class="text" for="hr">Show Password</label>
                           </div>
-                    </FormControl>
+                    </div>
                 </div>
                 <div class="row3">
                     <div class="signInPageBtn">Sign in instead</div>
                     <div class="SignUpBtnContainer">
-                        <button class="next-btn">Next</button>
+                        <button type="submit" class="next-btn">Next</button>
                     </div>
                 </div>
             </div>
