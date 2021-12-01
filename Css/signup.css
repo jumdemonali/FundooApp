@@ -15,7 +15,7 @@ body{
     padding: 0px;
     border: 0px;
     font-size: 1em;
-    
+    justify-content: space-evenly;
   }
   
   .formfield *{
@@ -35,6 +35,7 @@ body{
     display: flex;
     justify-content: space-between;   
   }
+
   .formfield>input, .formfield>label{
     padding: 0.8em;
     margin: 0.5em;
@@ -169,8 +170,8 @@ body{
 
 .next-btn{
     margin-top: 10px;
-    width: 100px; 
-    height: 50px ;
+    width: 70px;
+    height: 40px;
     background-color:#1a73e8;
     color: #fff;
 }
