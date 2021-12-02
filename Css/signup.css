@@ -42,6 +42,7 @@ body{
     padding: 0.8em;
     margin: 0.5em;
     width: 100%;
+    border-radius: 0.3em;
   }
   .formfield>input{
     border: 1px solid grey;
@@ -71,10 +72,15 @@ body{
   
 .signup-container {
     display: flex;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
-    
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 24px 24px 36px;
 }
 
 .signup-details-and-advertise-container {
@@ -172,9 +178,11 @@ body{
 .next-btn{
     margin-top: 10px;
     width: 70px;
+    top:50%;
     height: 40px;
     background-color:#1a73e8;
     color: #fff;
+    border-radius: 0.3em;
 }
 .formfield > span
 {
