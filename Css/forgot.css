@@ -10,6 +10,11 @@ body{
     padding-left: 14px;
     padding-right: 14px;
 }
+.logo{
+    font-size: 24px;
+    text-align: center;
+}
+
 .signup-details{
     display: flex;
     flex-direction: column;
@@ -34,7 +39,7 @@ body{
   
  
   #addressfield{
-    width:100%  
+    width:100%;
   }
 
   .formfield>input, .formfield>label{
@@ -97,13 +102,16 @@ body{
     align-items: center;
 }
 .signUpLogo{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     border-radius: 8px;
     width: 30%;
     height: 10%;
     margin:0% auto;
-    padding: 20px 20px;
+    padding: 5px 120px;
+    font-family:"Roboto";
+    align-items: center; */
+    padding: 3% 35%;
     font-family:"Roboto";
 }
 
