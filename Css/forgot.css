@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+:root{
+    --succes-color: #2ecc71;;
+    --error-color: #e74c3c;
+}
 
 * {
     box-sizing:inherit;
@@ -15,7 +19,7 @@ body{
     text-align: center;
 }
 
-.signup-details{
+#signup-details{
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -37,14 +41,13 @@ body{
     justify-content: space-evenly;
   }
   
- 
   #addressfield{
     width:100%;
   }
 
   .formfield>input, .formfield>label{
     padding: 0.8em;
-    margin: 1.0em;
+    /* margin: 1.0em; */
     width: 100%;
   }
   .formfield>input{
@@ -59,7 +62,7 @@ body{
     left: 0;
     color:gray;
   }
-  input:focus + label, input:valid + label{
+  /* input:focus + label, input:valid + label{
     color: black;
     font-size: 1.0em;
     width: auto;
@@ -72,6 +75,7 @@ body{
     top: 0em;
     left: 1.6em;
   }
+   */
 
 .logo{
     align-items: center;
@@ -134,25 +138,22 @@ body{
 
 }
 
-.success-icon,
-.failure-icon {
-  right: 0;
-  opacity: 0;
+
+.formfield.success input {
+    border-color: var(--succes-color);
 }
 
-.failure-icon,
-.error {
-  color: red;
+.formfield input.error {
+    border: 1px solid var(--error-color);  
+}
+  .formfield small{
+    color: var(--error-color);
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
+  
 }
 
-.success-icon {
-  color: green;
-}
-
-.error {
-  font-size: 14.5px;
-  margin-top: 5px;
-}
 /* .formfield > span
 {
    padding-left: 14px;
@@ -175,21 +176,31 @@ body{
     
 }
 
-@media screen and (max-width: 600px) {  
-    .signup-container {
-        width: 100%;
-        align-items: flex-start;
-    }
 
-    .signup-details-and-advertise-container {
+@media only screen and (max-width: 1200px){
+    .signup-container{
+        margin-left: 25vw;
+        margin-top: 20vh;
+        margin-bottom: 10vh;
+    }
+}
+
+@media  (min-width:768px) and (max-width:570px)  {
+    .signup-container{
+        margin: 0;
+        width: 100%;
         border: none;
-        width: 100%;
-        align-items: center;
     }
-
-    .formfield {
-        width: 100%;
-        flex-direction: column;
-        margin-bottom: 10px;
+}
+@media  (min-width:425px) and (max-width:570px)  {
+    .signup-container{
+        margin: 3vw;
+        border: none;
+    }
+}
+@media  (min-width:760px) and (max-width:1024px) {
+    .signup-container{
+      margin: 0;
+      border: none;
     }
 }

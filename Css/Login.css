@@ -191,32 +191,35 @@ body{
 }
 
 
-/* .formfield > span
-{
-   padding-left: 14px;
-} */
-
-
-@media screen and (max-width: 900px) {
-    .signup-details-and-advertise-container {
-        width: 400px;
+@media only screen and (max-width: 1200px){
+    .signup-details{
+        margin-left: 25vw;
+        margin-top: 20vh;
+        margin-bottom: 10vh;
     }
-    
-    .advertise-container {
-        display: none;
-    }
-
-    .signup-details {
-        width: 100%;
-    }
-
-   
 }
-    @media only screen and (max-width: 720px) {
-        .signup-details {
-            width: auto;
-            margin: 8px 85px 0 5px ;
-            border: none;
-            padding: 14px 5px;
-        }
+@media only screen and (max-width: 800px){
+    .signup-details{
+        margin-left: 20vw;
+        margin-top: 30vh;
     }
+}
+@media only screen and (max-width: 540px) {
+    .signup-details{
+        margin: 0;
+        width: 100%;
+        border: none;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .signup-details{
+        margin: 3vw;
+        border: none;
+    }
+}
+@media only screen and (max-width:360px) {
+    .signup-details{
+      margin: 0;
+      border: none;
+    }
+}

@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/forgot.css">
+    <link rel="stylesheet" href="../Css/inputBox.css">
+
     
     <title>Forgot</title>
 </head>
 <body>
     <div class="signup-container">
-        <div class="signup-details-and-advertise-container">
+       
 
-            <div class="signup-details">
+            <div id="signup-details">
 
                 <div class="signUpLogo">
                     <span style="color:blue;font-weight:bold">F</span><span style="color:red;font-weight:bold">u</span><span style="color:yellow;font-weight:bold">n</span><span style="color:blue;font-weight:bold">d</span><span style="color:green;font-weight:bold">o</span><span style="color:red;font-weight:bold">o</span>
@@ -23,19 +25,22 @@
                 </div>
 
                 <div class="container">
-                    <div class="formfield" id="addressfield">
-                        <input type="text" name="address" id="address" required>
+                    <div class="material-textfield">
+                        <input name="Name" class="material-input" placeholder=" " id="forgomail" type="text"
+                           >
+                        <label class="material-label">Email or phone</label>
+                        <p class="helpertext" id="forgomailvalid"></p>
+                    </div>
+                    <!-- <div class="formfield" id="addressfield">
+                        <input type="text" name="address" id="forgomail" >
                         <label alt="Adresse" for="address" placeholder="Username">Email or phone</label>
-                        <i class="fas fa-exclamation-circle failure-icon"></i>
-                        <i class="far fa-check-circle success-icon"></i>
-                        <div class="error"></div>
-                    </div>                    
+                        <small id="forgomailvalid"></small>
+                    </div>                     -->
                 </div>
                 <div class="row3">
                     <div class="SignUpBtnContainer">
-                        <button type="submit" id="next-btn">Next</button>
-                    </div>
-                </div>
+                        <button type="submit" id="next-btn" onclick="sumbit()">Next</button>
+               
             </div>
         </div>
     </div>

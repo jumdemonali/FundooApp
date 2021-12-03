@@ -1,0 +1,74 @@
+
+.material-textfield {
+    position: relative;
+    margin: 7px 0 0 0;
+    /* height: 70px; */
+    width: 100%;
+  }
+  
+  .material-label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: 0.1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+    font-size: 14px;
+    color: currentColor;
+    font-family: "Lato";
+  }
+  .material-input {
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    height: 16px;;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+    font-size: 14px;
+    color: currentColor;
+    font-family: "Lato";
+    transition: 0.1s ease-out;
+  }
+  .material-input:focus {
+    border-color: #e26003;
+    border: 2px solid #e26003;
+  }
+  .material-input:focus + .material-label {
+    color: #e26003;
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+  .material-input:not(:placeholder-shown) + .material-label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+  .material-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .helpertext {
+    color: #f44336;
+    font-size: 11px;
+    min-height: 15px;
+    margin: 0px 0px 0px 10px;
+    font-family: "Lato";
+  }
+  .material-container {
+    padding-bottom: 25px;
+  }
+  .formError {
+    border: 1px solid #f44336;
+
+  }
+  .formError>.material-input{
+      color: red;
+  }
+  
