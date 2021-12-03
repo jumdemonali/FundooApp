@@ -72,45 +72,11 @@ body{
     top: 0em;
     left: 1.6em;
   }
-  
-  
-/* .signup-container {
 
-    border: 1px solid #dadce0;
-    padding: 24px 24px 36px;
-    color: #202124;
-    font-family: roboto;
-    margin-top: 10vw;
-    margin-left: 38vw;
-    width:fit-content; 
-    overflow: hidden;
-}  */
-
-/* .signup-details-and-advertise-container {
-    display: flex;
-    flex-direction: column;
-    margin: 2.5vw;
-} */
-
-/* .signup-details {
-    display: flex;
-    flex-wrap: wrap;
-    width: 60%;
-    align-items: center;
-} */
 .logo{
     align-items: center;
 }
 .signUpLogo{
-    /* display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    width: 30%;
-    height: 10%;
-    margin:0% auto;
-    padding: 5px 120px;
-    font-family:"Roboto";
-    align-items: center; */
     padding: 3% 35%;
     font-family:"Roboto";
 }
@@ -125,49 +91,6 @@ body{
     align-items: center;
 }
 
-/* .checkBox-container{
-    text-align: left;
-} */
-
-/* .userinp{
-    width: 200%;
-    height: 7%;
-    display: flex;
-    justify-content: space-between; 
-} */
-/* .row2 {
-    width: 200%;
-    height: 7%;
-    display: flex;
-    justify-content: space-between;
-} */
-
-/* .username-text{
-    height: 100%;
-} */
-
-/* 
-.username-text {
-    width: 100%;
-} */
-
-/* .advertise-container {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* border: 2px solid green; */
-/* } 
-
-.AdvertiseSVG-text {
-    font-size: 1em;
-    font-weight: 300;
-    text-align: center;
-    line-height: 1.4286;
-    color: #202124;
-    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
-} */
-
 .row3 {
     position: relative; 
     top: 12%;
@@ -177,12 +100,6 @@ body{
     justify-content: space-between;
 }
 
-/* .signInPageBtn {
-    padding-top: 10px;
-    color: #1a73e8;
-    font-weight: bold;
-    text-align: left;
-} */
 
 .signUpText{
     text-align: center;
@@ -205,11 +122,8 @@ body{
     letter-spacing: 0.03rem;
     margin-bottom: 3vh;
 }
-/* .SignUpBtnContainer{
-    justify-items: center;
-} */
 
-.next-btn{
+#next-btn{
     margin-top: 10px;
     width: 70px;
     top:50%;
@@ -220,7 +134,25 @@ body{
 
 }
 
+.success-icon,
+.failure-icon {
+  right: 0;
+  opacity: 0;
+}
 
+.failure-icon,
+.error {
+  color: red;
+}
+
+.success-icon {
+  color: green;
+}
+
+.error {
+  font-size: 14.5px;
+  margin-top: 5px;
+}
 /* .formfield > span
 {
    padding-left: 14px;
@@ -228,9 +160,6 @@ body{
 
 
 @media screen and (max-width: 900px) {
-    .signup-details-and-advertise-container {
-        width: 400px;
-    }
     
     .advertise-container {
         display: none;
@@ -246,11 +175,7 @@ body{
     
 }
 
-@media screen and (max-width: 600px) {
-    .name-text, .password-text, .confirm-password-text {
-        width: 100%;
-    }
-
+@media screen and (max-width: 600px) {  
     .signup-container {
         width: 100%;
         align-items: flex-start;

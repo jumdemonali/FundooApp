@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/forgot.css">
-	 <link rel="stylesheet" href="../Js/forgot.js">
+    
     <title>Forgot</title>
 </head>
 <body>
@@ -26,17 +26,19 @@
                     <div class="formfield" id="addressfield">
                         <input type="text" name="address" id="address" required>
                         <label alt="Adresse" for="address" placeholder="Username">Email or phone</label>
- 
-                    </div>
-                     
+                        <i class="fas fa-exclamation-circle failure-icon"></i>
+                        <i class="far fa-check-circle success-icon"></i>
+                        <div class="error"></div>
+                    </div>                    
                 </div>
                 <div class="row3">
                     <div class="SignUpBtnContainer">
-                        <button type="submit" class="next-btn">Next</button>
+                        <button type="submit" id="next-btn">Next</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../Js/forgot.js"></script>
 </body>
 </html>

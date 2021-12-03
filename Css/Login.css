@@ -15,10 +15,10 @@ body{
     flex-direction: column;
     border-radius: 8px;
     border: 1px solid #dadce0;
-    width: 380px;
-    height: 450px;
-    margin:5% auto;
-    padding: 38px 40px;
+    width: 200%;
+    height: 550px;
+    margin:1% auto;
+    padding: 30px 30px;
     font-family:"Roboto";
 }
 .formfield{
@@ -34,9 +34,12 @@ body{
   
  
   #addressfield{
-    width:100%  
+    width:400px;  
   }
-
+  #lastnamefield{
+      width: 100%;
+  }
+ 
   .formfield>input, .formfield>label{
     padding: 0.8em;
     margin: 1.0em;
@@ -68,18 +71,7 @@ body{
     left: 1.6em;
   }
   
-/*   
-.signup-container {
 
-    border: 1px solid #dadce0;
-    padding: 24px 24px 36px;
-    color: #202124;
-    font-family: roboto;
-    margin-top: 10vw;
-    margin-left: 38vw;
-    width:fit-content; 
-
-}  */
 
 .signup-details-and-advertise-container {
     display: flex;
@@ -87,23 +79,16 @@ body{
     margin: 2.5vw;
 }
 
-/* .signup-details {
+.signup-details {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 30%;
     align-items: center;
-} */
+}
 
 .signUpLogo{
-    /* display: flex;
-    flex-direction: row; */
-    /* border-radius: 8px;
-    width: 1px;
-    height: 0.5px; */
     padding: 3% 35%;
     font-family:"Roboto";
-    /* margin:0% auto; */
-
 }
 
 .signUpLogo, .signUpText {
@@ -116,31 +101,7 @@ body{
     align-items: center;
 }
 
-/* .checkBox-container{
-    text-align: left;
-} */
 
-/* .userinp{
-    width: 200%;
-    height: 7%;
-    display: flex;
-    justify-content: space-between; 
-} */
-/* .row2 {
-    width: 200%;
-    height: 7%;
-    display: flex;
-    justify-content: space-between;
-} */
-
-/* .username-text{
-    height: 100%;
-} */
-
-/* 
-.username-text {
-    width: 100%;
-} */
 
 .advertise-container {
     width: 35%;
@@ -161,25 +122,43 @@ body{
 
 .row3 {
     position: relative; 
-    top: 5%;
-    left: 80%; 
+    top: 10%;
+    left: 0.5px; 
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
 .signInPageBtn {
-    padding-top: 10px;
+    padding-top: 0.5px;
     color: #1a73e8;
     font-weight: bold;
     text-align: left;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    top: 10%;
+}
+.checkBox{
+    top:5%;
+    /* font-weight: bold; */
+    /* text-align: left; */
+    /* padding-left: 9px; */
+    font-size: 12px;
+    padding-bottom: 12px;
 }
 
+.formfield>span{
+    color: gray;
+    font-size: 15px;
+    font-family: roboto;
+}
 .signUpText{
     text-align: center;
     font-family: arial;
     color: black;
 }
+
 .signup-text1{
     font-family: roboto;
     font-size: 1.5rem;

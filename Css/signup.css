@@ -16,10 +16,16 @@ body{
     margin: auto;
     padding: 0px;
     border: 0px;
-    font-size: 1em;
+    font-size: 0.9em;
     justify-content: space-evenly;
   }
-  
+  .formfield>span{
+      font-family: Roboto;
+      margin-left: 20px;
+      font-size: 12px;
+      margin-top: 3px;
+      font-weight:bold ;
+  }
   .formfield *{
     box-sizing:content-box;
   }
@@ -28,9 +34,10 @@ body{
     /* min-width: 250px; */
     display: flex;
     justify-content: space-between;
+    font-family: roboto;
   }
   #addressfield{
-    width:92%  
+    width:87%;  
   }
   #password,#confirm{
     min-width: none;
@@ -39,10 +46,10 @@ body{
   }
 
   .formfield>input, .formfield>label{
-    padding: 0.8em;
-    margin: 0.5em;
+    padding: 0.9em;
+    margin: 1.1em;
     width: 100%;
-    border-radius: 0.3em;
+    border-radius: 0.2em;
   }
   .formfield>input{
     border: 1px solid grey;
@@ -166,6 +173,11 @@ body{
     color: #1a73e8;
     font-weight: bold;
     text-align: left;
+    font-family: Roboto;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 3px;
+    font-weight:bold ;
 }
 
 .signUpText{
@@ -184,9 +196,26 @@ body{
     color: #fff;
     border-radius: 0.3em;
 }
-.formfield > span
-{
-   padding-left: 14px;
+.signUpLogo{
+    /* display: flex;
+    flex-direction: row; */
+    /* border-radius: 8px;
+    width: 1px;
+    height: 0.5px; */
+    /* padding: 3% 35%; */
+    font-family:"Roboto";
+    /* margin:0% auto; */
+
+}
+
+.signUpLogo {
+    margin: 0;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    align-items: center;
 }
 
 
