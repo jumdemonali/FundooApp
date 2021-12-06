@@ -21,7 +21,7 @@ body{
     padding: 38px 40px;
     font-family:"Roboto";
 }
-.formfield{
+/* .formfield{
     position: relative;
     box-sizing: border-box;
     float: left;
@@ -30,7 +30,7 @@ body{
     border: 0px;
     font-size: 0.9em;
     justify-content: space-evenly;
-  }
+  } */
   
   #addressfield{
     width:100%  
@@ -73,7 +73,7 @@ body{
     left: 0;
     color:gray;
   }
-  input:focus + label, input:valid + label{
+  /* input:focus + label, input:valid + label{
     color: black;
     font-size: 1.0em;
     width: auto;
@@ -85,7 +85,7 @@ body{
     transition: 0.2s ease-in-out;
     top: 0em;
     left: 1.6em;
-  }
+  } */
   
 
 .signUpLogo{
@@ -161,11 +161,11 @@ body{
 
    
 }
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 1140px) {
         .signup-details {
-            width: auto;
-            margin: 8px 85px 0 5px ;
-            border: none;
-            padding: 14px 5px;
+          width: auto;
+        margin: 8px 90px 5px 5px ;
+        border: none;
+        padding: 14px 5px;
         }
     }

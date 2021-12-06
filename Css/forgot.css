@@ -158,49 +158,12 @@ body{
 {
    padding-left: 14px;
 } */
-
-
-@media screen and (max-width: 900px) {
-    
-    .advertise-container {
-        display: none;
-    }
-
-    .signup-details {
-        width: 100%;
-    }
-
-    .signUpLogo, .signUpText {
-        text-align:center;
-    }
-    
-}
-
-
-@media only screen and (max-width: 1200px){
-    .signup-container{
-        margin-left: 25vw;
-        margin-top: 20vh;
-        margin-bottom: 10vh;
-    }
-}
-
-@media  (min-width:768px) and (max-width:570px)  {
-    .signup-container{
-        margin: 0;
-        width: 100%;
+@media only screen and (max-width: 1024px) {
+    .signup-details{
+        width: auto;
+        margin: 8px 85px 5px 5px ;
         border: none;
+        padding: 14px 5px;
     }
 }
-@media  (min-width:425px) and (max-width:570px)  {
-    .signup-container{
-        margin: 3vw;
-        border: none;
-    }
-}
-@media  (min-width:760px) and (max-width:1024px) {
-    .signup-container{
-      margin: 0;
-      border: none;
-    }
-}
+

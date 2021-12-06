@@ -57,7 +57,7 @@ body{
     left: 0;
     color:gray;
   }
-  input:focus + label, input:valid + label{
+  /* input:focus + label, input:valid + label{
     color: black;
     font-size: 1.0em;
     width: auto;
@@ -70,7 +70,7 @@ body{
     top: 0em;
     left: 1.6em;
   }
-  
+   */
 
 
 .signup-details-and-advertise-container {
@@ -144,7 +144,7 @@ body{
     /* font-weight: bold; */
     /* text-align: left; */
     /* padding-left: 9px; */
-    font-size: 12px;
+    font-size: 13px;
     padding-bottom: 12px;
 }
 
@@ -191,6 +191,7 @@ body{
 }
 
 
+/* 
 @media only screen and (max-width: 1200px){
     .signup-details{
         margin-left: 25vw;
@@ -221,5 +222,13 @@ body{
     .signup-details{
       margin: 0;
       border: none;
+    }
+} */
+@media only screen and (max-width: 425px) {
+    .signup-details{
+        width: auto;
+        margin: 5% 0;
+        border: none;
+        padding: 24px 25px;
     }
 }

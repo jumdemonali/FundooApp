@@ -18,7 +18,7 @@
     margin: 0 0.5rem;
     transition: 0.1s ease-out;
     transform-origin: left top;
-    pointer-events: none;
+    pointer-events:none;
     font-size: 14px;
     color: currentColor;
     font-family: "Lato";
@@ -28,7 +28,7 @@
     width: 100%;
     outline: none;
     height: 16px;;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    /* border: 1px solid rgba(0, 0, 0, 0.12); */
     border-radius: 5px;
     padding: 1rem 0.7rem;
     font-size: 14px;

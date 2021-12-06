@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Login.css">
+    <link rel="stylesheet" href="../Css/inputBox.css">
 	 <!-- <link rel="stylesheet" href="../Js/validation.js"> -->
     <title>Login</title>
 </head>
@@ -22,22 +23,23 @@
                 </div>
 
                 <div class="container">
-                    <div class="formfield" id="addressfield">
-                        <input type="text" name="address" id="address" required>
-                        <label alt="Adresse" for="address" placeholder="Username">Email or phone</label>
+                    <div class="material-textfield">
+                        <input name="Name" class="material-input" placeholder=" " id="forgomail" type="text">
+                        <label class="material-label">Email or phone</label>
+                        <p class="helpertext" id="forgomailvalid"></p>
+                    </div>
                         <div class="signInPageBtn"> Forgot email?</div>   
                    
-                         <div class="formfield" id="lastnamefield">
-                        <input type="text" name="lastname" id="lastname" required>
-                        <label alt="Nom" for="lastname" placeholder="Nom">Confirm Password</label>
-                    </div>
-                    
+                        <div class="material-textfield">
+                            <input name="Name" class="material-input" placeholder=" " id="reentermail" type="password">
+                            <label class="material-label">Password</label>
+                            <p class="helpertext" id="forgomailvalidation"></p>
+                        </div>          
                 
-                
-               
+             
                     <div class="checkBox">
                         <div>
-                            <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                            <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR"  onclick="myFunction()">
                             <label class="text" for="pass">Show Password</label>
                           </div>
                     </div>
@@ -55,11 +57,14 @@
                 <div class="row3">
                     <div class="signInPageBtn">Create account</div>
                     <div class="SignUpBtnContainer">
-                        <button type="submit" class="next-btn">Next</button>
+                        <button type="submit" class="next-btn" onclick="sumbit()">Next</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../Js/validation.js"></script>
+    <script src="../Js/checkbox.js"></script>
+    <script src="../Service/service.js"></script>
 </body>
 </html>
