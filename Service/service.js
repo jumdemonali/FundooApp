@@ -8,10 +8,11 @@ function postMethod(url,formData){
     .then(response=>response.json())
     .then(result=>{
         // console.log('Success:',result);
-        return Success;
+        return result;
     })
     .catch(error=>{
         console.console.log('Error:',error);
+        return error;
     });
 }
 function getMethod(){

@@ -24,14 +24,16 @@
 
                 <div class="container">
                     <div class="material-textfield">
-                        <input name="Name" class="material-input" placeholder=" " id="forgomail" type="text">
-                        <label class="material-label">User Name</label>
-                        <p class="helpertext" id="forgomailvalid"></p>
-                    </div>
-                    <div class="material-textfield">
-                        <input name="Name" class="material-input" placeholder=" " id="forgomail" type="text">
-                        <label class="material-label">User Name</label>
-                        <p class="helpertext" id="forgomailvalid"></p>
+                        <div class="material-textfield">
+                            <input name="Name" class="material-input" placeholder=" " id="firstname">
+                            <label class="material-label">First Name</label>
+                            <p class="helpertext" id="firstnamevalidation"></p>
+                        </div> 
+                        <div class="material-textfield">
+                        <input  name="name" class="material-input" placeholder=" " id="lastname" >
+                        <label class="material-label">Last Name</label>
+                        <p class="helpertext" id="lastnamevalid"></p>
+                        </div>
                     </div>
                     <div class="formfield" id="addressfield">
                         <div class="material-textfield">
@@ -44,17 +46,19 @@
                 </div>
                 
                     <div class="signInPageBtn">Use my current email address instead</div>           
-                <div class="container">
-                    <div class="material-textfield">
-                        <input name="Name" class="material-input" placeholder=" " id="password" type="password">
-                        <label class="material-label">Password</label>
-                        <p class="helpertext" id="forgomailvalidation"></p>
-                    </div>     
-                    <div class="material-textfield">
-                        <input name="Name" class="material-input" placeholder=" " id="reentermail" type="password">
-                        <label class="material-label">Confirm Password</label>
-                        <p class="helpertext" id="forgomailvalidation"></p>
-                    </div>  
+                    <div class="container">
+                        <div class="material-textfield">
+                            <input name="Name" class="material-input" placeholder=" " id="reentermail" type="text">
+                            <label class="material-label">New password</label>
+                            <p class="helpertext" id="forgomailvalidation"></p>
+                        </div>
+                    
+                        <div class="material-textfield">
+                            <input name="Name" class="material-input" placeholder=" " id="reentermail" type="text">
+                            <label class="material-label">Confirm password</label>
+                            <p class="helpertext" id="forgomailvalidation"></p>
+                        </div>
+                   
                      <div class="formfield" id="text"> <span> Use 8 or more characters with a mix of letters, numbers & symbols</span></div>
                
                 </div>
@@ -82,7 +86,6 @@
         </div>
     </div>
     <script src="../Js/validation.js"></script>
-    <script src="../Js/checkbox.js"></script>
     <script src="../Service/service.js"></script>
 </body>
 </html>

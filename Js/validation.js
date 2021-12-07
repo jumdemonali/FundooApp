@@ -34,6 +34,7 @@ const checkMail = (textid, errid) => {
   }
   return valid;
 };
+
 const checkPassword = (textid, errid) => {
   let valid = false;
   var value = document.getElementById(textid).value;
@@ -90,6 +91,46 @@ const newPassword = (textid, errid) => {
   }
   return valid;
 };
+
+const checkLastName = (textid, errid) => {
+  let valid = false;
+  var value = document.getElementById(textid).value;
+  if (!isRequired(value)) {
+    showError(errid, "Last name required", textid);
+  } else if (lastNameRegEx(value)) {
+    showError(errid, `Invalid Entry`, textid);
+  } else {
+    showSuccess(errid, textid);
+    valid = true;
+  }
+  return valid;
+};
+const checkFirstName = (textid, errid) => {
+  let valid = false;
+  var value = document.getElementById(textid).value;
+  if (!isRequired(value)) {
+    showError(errid, "First name required", textid);
+  } else if (firstNameRegEx(value)) {
+    showError(errid, `Invalid Entry`, textid);
+  } else {
+    showSuccess(errid, textid);
+    valid = true;
+  }
+  return valid;
+};
+const confirmPassword = (textid, errid) => {
+  let valid = false;
+  var value = document.getElementById(textid).value;
+  if (!isRequired(value)) {
+    showError(errid, "First name required", textid);
+  } else if (firstNameRegEx(value)) {
+    showError(errid, `Invalid Entry`, textid);
+  } else {
+    showSuccess(errid, textid);
+    valid = true;
+  }
+  return valid;
+};
 // function checkPasswordMatch(input1, input2) {
 //   let valid = false;
 //   var value = document.getElementById(input1).value;
@@ -100,17 +141,23 @@ const newPassword = (textid, errid) => {
 const sumbit =() =>{
 
   var valid =  checkMail('forgomail','forgomailvalid')
-     ||
+  ||
   confirmMail('reentermail','forgomailvalidation')
+    ||
+  checkLastName('lastname','lastnamevalid')
+    ||
+  checkFirstName('firstname','firstnamevalidation')
+    
      ||
   checkUsername('address','forgomailvalid') 
      ||
-  checkPassword('forgopass','forgopassvalid')
+  confirmPassword('forgopass','forgopassvalid')
     ||
   newPassword('forgopassword','forgopassvalid')
+   
   
 
-  if(successsss){
+  if(valid==true){
     let data = {
       "firstName": "Mona",
       "lastName":"Jumde" ,
@@ -120,7 +167,7 @@ const sumbit =() =>{
   }
    let result= postMethod('user/userSignUp', data);
    if(result.status==200){
-     redirect /login
+     redirect /login;
    }
   }
   
