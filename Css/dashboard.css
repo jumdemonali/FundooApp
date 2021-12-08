@@ -1,3 +1,69 @@
+body {
+  background-color: #fff;
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 15px;
+  margin: 0;
+  min-width: 360px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  padding: 10px 10px 19px 10px;
+  margin: black;
+}
+.material-input{
+  background-color: transparent;
+  padding: 10px 10px 19px 10px;
+  /* width: 50%;
+    height: 25%; */
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+ 
+}
+input[type=text] { 
+    width: 70%; 
+    /* padding: 12px 40px;  */
+    margin: 8px 0; 
+    /* display: inline-block;  */
+    border: 1px solid #ccc; 
+    
+} 
+.material-input i {
+  position: absolute;
+}
+
+.material-input {
+  /* width: 100%; */
+  margin-bottom: 10px;
+}
+   
+
+.logo {
+  position: absolute;
+  left: 72%;
+  top: 20%;
+  font-size:27px;
+  align-content: flex-end;
+  color:lightgrey;
+}
+
+
+  
+.note{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2%;
+  padding-top: 5%;
+  padding-left: 25%;
+  text-align: left;
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+  /* box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%); */
+  /* border-width: 0 0 0 4px;  */
+  /* background-color: violet; */
+}
 .sidebar {
     margin: 0;
     padding: 0;
@@ -22,32 +88,47 @@
     color: white;
   }
   header{
-    background-color: gainsboro;
+    background-color: transparent;
     width: 98%;
     display:block;
-    padding: 0.1% 0.9%;
+    padding: 1.3% 1.9%;
     align-items: inherit;
     border: red;
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
   }
  
   section{
-    background-color: brown;
-    float: right;
-    display: block;
-    color: black;
-    padding: 25px 83px;
-    text-decoration: none;
-    font-size: 16px;
-    height: 0px;
-    width: 0px;
-    align-items: row;
+    /* background-color: brown; */
+    position: absolute;
+    left: 90%;
+    top: 1%;
+    font-size:47px;
+    align-content: flex-end;
+    color:lightgrey;
   } 
   section i{
     align-items: inherit;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flexbox;
-    flex-direction: horizontal;
+    align-items: flex-end;
   }
+  
+div {
+  display: block;
+}
+body {
+  background-color: #fff;
+  color: #202124;
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 15px;
+  margin: 0;
+  min-width: 360px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+}
+
   h1{
       padding-left: 90px;
   }
@@ -93,6 +174,7 @@
   input[type="search" i] {
     appearance: auto;
     box-sizing: border-box;
+    background-color: lightgrey;
     /* padding: 1px 2px; */
 }
   /* Links on mouse-over */

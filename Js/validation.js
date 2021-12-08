@@ -5,7 +5,8 @@ const isAlpha = (value) => (value.match("^[a-zA-Z ]*$") ? false : true);
 const firstNameRegEx = /^[A-Z]{1}[a-z]{2,}$/;
 const lastNameRegEx = /^[A-Z]{1}[a-z]{2,}$/;
 const re =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ | /^[0-9]{10}$/;
+/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 const passwordRegEx = /^(?=.*[A-Z])(?=.*[a-z])(?=[^!@#$%^&+=]*[!@#$%^&+=][^!@#$%^&+=]*$)(?=.*[0-9]).{8,}$/
 
 const isMail = (value) => (re.test(String(value).toLowerCase()) ? false : true);
@@ -20,10 +21,11 @@ const showSuccess = (input, e) => {
   document.getElementById(input).textContent = "";
   document.getElementById(e).classList.remove("formError");
 };
-
+let email
 const checkMail = (textid, errid) => {
   let valid = false;
-  var value = document.getElementById(textid).value;
+  email = document.getElementById(textid).value;
+  var value=email;
   if (!isRequired(value)) {
     showError(errid, "Entry required", textid);
   } else if (isMail(value)) {
@@ -34,10 +36,11 @@ const checkMail = (textid, errid) => {
   }
   return valid;
 };
-
+let password;
 const checkPassword = (textid, errid) => {
   let valid = false;
-  var value = document.getElementById(textid).value;
+  password  = document.getElementById(textid).value;
+  var value=password;
   if (!isRequired(value)) {
     showError(errid, "Entry Required", textid);
   } else if (isPass(value)) {
@@ -123,7 +126,7 @@ const confirmPassword = (textid, errid) => {
   var value = document.getElementById(textid).value;
   if (!isRequired(value)) {
     showError(errid, "First name required", textid);
-  } else if (firstNameRegEx(value)) {
+  } else if (isPass(value)) {
     showError(errid, `Invalid Entry`, textid);
   } else {
     showSuccess(errid, textid);
@@ -139,35 +142,34 @@ const confirmPassword = (textid, errid) => {
 //   }
 // }
 const sumbit =() =>{
-
+console.log("hiii");
   var valid =  checkMail('forgomail','forgomailvalid')
   ||
   confirmMail('reentermail','forgomailvalidation')
-    ||
-  checkLastName('lastname','lastnamevalid')
-    ||
-  checkFirstName('firstname','firstnamevalidation') 
-     ||
-  checkUsername('address','forgomailvalid') 
-     ||
-  confirmPassword('forgopass','forgopassvalid')
-    ||
-  newPassword('forgopassword','forgopassvalid')
+  //   ||
+  // checkLastName('lastname','lastnamevalid')
+  //   ||
+  // checkFirstName('firstname','firstnamevalidation') 
+  //    ||
+  // checkUsername('address','forgomailvalid') 
+  //    ||
+  // confirmPassword('forgopass','forgopassvalid')
+  //   ||
+  // newPassword('forgopassword','forgopassvalid')
    
-  
+  console.log(valid);
 
-  if(valid==true){
+  if(valid){
     let data = {
-      "firstName": "Mona",
-      "lastName":"Jumde" ,
-      "email":"jumdemonali@gmail.com" ,
-      "service": "advance",
-      "password": "xyz"
+      
+      "email":email ,
+      "password": password
   }
-   let result= postMethod('user/userSignUp', data);
-   if(result.status==200){
-     redirect /login;
-   }
+  console.log(data);
+  //  let result= postMethod('user/userSignUp', data);
+  //  if(result.status==200||299){
+  //   window.location.href = "http://mywebsite.com/home.html";
+  //  }
   }
   
 }
