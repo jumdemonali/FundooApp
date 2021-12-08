@@ -29,16 +29,18 @@ body{
   }
   .formfield *{
     box-sizing:content-box;
+    width: 100%;
   }
-  #firstnamefield, #lastnamefield{
-    width: 50%;
+  #firstname, #lastname{
+      min-width: none;
+    width: 99%;
     /* min-width: 250px; */
     display: flex;
     justify-content: space-between;
     font-family: roboto;
   }
   #addressfield{
-    width:87%;  
+    width:90%;  
   }
   #password,#confirm{
     min-width: none;
@@ -104,7 +106,7 @@ body{
 .signup-details {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 90%;
 }
 
 .signUpLogo, .signUpText {
@@ -117,16 +119,15 @@ body{
 }
 
 .userinp{
-    width: 200%;
+    width: 250%;
     height: 7%;
     display: flex;
     justify-content: space-between; 
 }
 .row2 {
-    width: 200%;
-    height: 7%;
     display: flex;
-    justify-content: space-between;
+   width: 98%;
+  
 }
 
 .username-text{
@@ -136,7 +137,7 @@ body{
 
 .firstNameContainer {
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .username-text {
@@ -144,7 +145,7 @@ body{
 }
 
 .advertise-container {
-    width: 35%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,7 +160,11 @@ body{
     color: #202124;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
 }
-
+.row1{
+   
+   display: flex;
+   width: 98%;
+}
 .row3 {
     position: relative; 
     top: 8%;

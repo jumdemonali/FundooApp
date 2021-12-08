@@ -146,8 +146,7 @@ const sumbit =() =>{
     ||
   checkLastName('lastname','lastnamevalid')
     ||
-  checkFirstName('firstname','firstnamevalidation')
-    
+  checkFirstName('firstname','firstnamevalidation') 
      ||
   checkUsername('address','forgomailvalid') 
      ||

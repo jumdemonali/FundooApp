@@ -23,11 +23,30 @@
   }
   header{
     background-color: gainsboro;
-    width: 100%;
+    width: 98%;
     display:block;
     padding: 0.1% 0.9%;
     align-items: inherit;
     border: red;
+  }
+ 
+  section{
+    background-color: brown;
+    float: right;
+    display: block;
+    color: black;
+    padding: 25px 83px;
+    text-decoration: none;
+    font-size: 16px;
+    height: 0px;
+    width: 0px;
+    align-items: row;
+  } 
+  section i{
+    align-items: inherit;
+    background-color: yellow;
+    display: flexbox;
+    flex-direction: horizontal;
   }
   h1{
       padding-left: 90px;
@@ -47,7 +66,7 @@
     
   }
   header span{
-    color: darkgray;
+    color: black;
     font-size: 30px;
   
   }
@@ -62,7 +81,7 @@
     margin: 7px 7px 9px 9px;
     margin: 0;
     overflow: hidden;
-    width: 20%;
+    width: 40%;
     height: 20%;
     padding: 0.5em;
     margin: 0;
@@ -74,7 +93,7 @@
   input[type="search" i] {
     appearance: auto;
     box-sizing: border-box;
-    padding: 1px 2px;
+    /* padding: 1px 2px; */
 }
   /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
