@@ -159,7 +159,7 @@ body{
    padding-left: 14px;
 } */
 @media only screen and (max-width: 1024px) {
-    .signup-details{
+    .signup-container{
         width: auto;
         margin: 8px 85px 5px 5px ;
         border: none;

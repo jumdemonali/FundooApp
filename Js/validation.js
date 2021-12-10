@@ -8,9 +8,12 @@ const re =
 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const passwordRegEx = /^(?=.*[A-Z])(?=.*[a-z])(?=[^!@#$%^&+=]*[!@#$%^&+=][^!@#$%^&+=]*$)(?=.*[0-9]).{8,}$/
+const userNameRegEx =/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/
 
 const isMail = (value) => (re.test(String(value).toLowerCase()) ? false : true);
 const isPass =(value)=> (passwordRegEx.test(String(value).toLowerCase()) ? false : true);
+const isUserName=(value)=> (userNameRegEx.test(String(value).toLowerCase()) ? false : true);
+
 
 const showError = (input, message, e) => {
   document.getElementById(e).classList.add("formError");
@@ -36,7 +39,7 @@ const checkMail = (textid, errid) => {
   }
   return valid;
 };
-let password;
+let password
 const checkPassword = (textid, errid) => {
   let valid = false;
   password  = document.getElementById(textid).value;
@@ -70,24 +73,9 @@ const checkUsername = (textid, errid) => {
   let valid = false;
   var value = document.getElementById(textid).value;
   if (!isRequired(value)) {
-    showError(errid, "FirstName Required", textid);
-  } else if (isAlpha(value)) {
-    showError(errid, `Invalid firstname`, textid);
-  }else if (isAlpha(value)) {
-    showError(errid, `Name must contain alphabetic only`, textid);
-  } else {
-    showSuccess(errid, textid);
-    valid = true;
-  }
-  return valid;
-};
-const newPassword = (textid, errid) => {
-  let valid = false;
-  var value = document.getElementById(textid).value;
-  if (!isRequired(value)) {
-    showError(errid, "Password Required", textid);
-  } else if (isPass(value)) {
-    showError(errid, `Invalid password`, textid);
+    showError(errid, "Entry Required", textid);
+  } else if (isUserName(value)) {
+    showError(errid, `Invalid user name`, textid);
   } else {
     showSuccess(errid, textid);
     valid = true;
@@ -95,12 +83,14 @@ const newPassword = (textid, errid) => {
   return valid;
 };
 
+let lastname
 const checkLastName = (textid, errid) => {
   let valid = false;
-  var value = document.getElementById(textid).value;
+  lastname = document.getElementById(textid).value;
+  var value=lastname;
   if (!isRequired(value)) {
     showError(errid, "Last name required", textid);
-  } else if (lastNameRegEx(value)) {
+  } else if (isAlpha(value)) {
     showError(errid, `Invalid Entry`, textid);
   } else {
     showSuccess(errid, textid);
@@ -108,13 +98,29 @@ const checkLastName = (textid, errid) => {
   }
   return valid;
 };
+let firstname
 const checkFirstName = (textid, errid) => {
   let valid = false;
   var value = document.getElementById(textid).value;
   if (!isRequired(value)) {
     showError(errid, "First name required", textid);
-  } else if (firstNameRegEx(value)) {
+  } else if (isAlpha(value)) {
     showError(errid, `Invalid Entry`, textid);
+  } else {
+    showSuccess(errid, textid);
+    valid = true;
+  }
+  return valid;
+};
+let newpass;
+const newPassword = (textid, errid) => {
+  let valid = false;
+  newpass = document.getElementById(textid).value;
+  var value=newpass;
+  if (!isRequired(value)) {
+    showError(errid, "Password Required", textid);
+  } else if (isPass(value)) {
+    showError(errid, `Invalid password`, textid);
   } else {
     showSuccess(errid, textid);
     valid = true;
@@ -134,28 +140,12 @@ const confirmPassword = (textid, errid) => {
   }
   return valid;
 };
-// function checkPasswordMatch(input1, input2) {
-//   let valid = false;
-//   var value = document.getElementById(input1).value;
-//   if(input1.value !== input2.value) {
-//       showError(errid, 'Passwords do not match');
-//   }
-// }
+
 const sumbit =() =>{
 console.log("hiii");
-  var valid =  checkMail('forgomail','forgomailvalid')
+  var valid =  checkMail('email','emailvalid')
   ||
   confirmMail('reentermail','forgomailvalidation')
-  //   ||
-  // checkLastName('lastname','lastnamevalid')
-  //   ||
-  // checkFirstName('firstname','firstnamevalidation') 
-  //    ||
-  // checkUsername('address','forgomailvalid') 
-  //    ||
-  // confirmPassword('forgopass','forgopassvalid')
-  //   ||
-  // newPassword('forgopassword','forgopassvalid')
    
   console.log(valid);
 
@@ -163,17 +153,60 @@ console.log("hiii");
     let data = {
       
       "email":email ,
+    //   "password": password
+  }
+  console.log(data);
+   let result= postMethod('user/userSignUp', data);
+   if(result.status==200||299){
+    window.location.href = "http://127.0.0.1:5500/dashboardpage.html";
+   }
+  }
+}
+const submitlogin=()=>{
+    var valid =  checkMail('email','emailvalid')
+    ||
+    newPassword('password','passwordvalidation')
+
+  console.log(valid);
+  if(valid){
+    let data = {
+      "email":email ,
       "password": password
   }
   console.log(data);
-  //  let result= postMethod('user/userSignUp', data);
-  //  if(result.status==200||299){
-  //   window.location.href = "http://mywebsite.com/home.html";
-  //  }
-  }
-  
-}
 
-// const submit1=()=>{
-//   var valid =checkUsername('lastname','forgomailvalidation')
-// }
+  }
+}
+ const submitsignup= async()=>{
+  var valid =  checkFirstName('firstname','firstnamevalidation')
+  ||
+  checkLastName('lastname','lastnamevalidation')
+  ||
+  checkUsername('forgomail','forgomailvalid')
+  ||
+  checkPassword('reentermail','forgomailvalidation')
+
+console.log(valid);
+if(valid){
+  let data = {
+    "firstName": document.getElementById("firstname").value,
+    "lastName": document.getElementById("lastname").value,
+    "email": document.getElementById("forgomail").value,
+    "service": "advance",
+    "password": document.getElementById("reentermail").value
+}
+console.log(data);
+getvals('user/userSignUp', data, "POST")
+.then((response)=>{
+console.log(response);
+if((response.status>=200) || (response.status<=299) ){
+  window.location.href = "../dashboardpage";
+ 
+ }
+})
+.catch((error)=>{
+console.log(error);
+})
+
+}
+}
