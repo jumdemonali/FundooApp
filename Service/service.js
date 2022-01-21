@@ -28,13 +28,20 @@ function getvals(url, data, meth) {
     };
     if (meth != "GET") {
       options.body = JSON.stringify(data);
+      // window.location="../dashboardpage.html"
+      console.log(data)
+      // let a = JSON.parse(data)
+      // console.log(a.id)
+      // localStorage.setItem("token",a.id)
+      
     }
-    return fetch(baseUrl+url, options)
+    return fetch(url, options)
       .then((response) => response.json())
       .then((responseData) => {
         return responseData;
       })
       .catch((error) => console.warn(error));
+      
   }
   
 

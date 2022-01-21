@@ -12,12 +12,21 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+    integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+    crossorigin="anonymous"> </script>
+    
     <link rel="stylesheet" href="../Css/dashboard.css">
+    <script src="./Js/dashboard.js"></script>
     <title>Keep Notes</title>
   </head>
   <body>
-    
-    <header><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;</i><i class="fas fa-sticky-note"></i>&nbsp;&nbsp;&nbsp;&nbsp;</i></i><span><b>Keep</b></span>&nbsp;&nbsp;&nbsp;&nbsp; <input type="search" placeholder="Search">
+    <header>
+      <i class="fas fa-bars"></i>
+    <img src=https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png>&nbsp;&nbsp;&nbsp;&nbsp;</i></i><span><b>Keep</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="fa fa-search search-button"></button>
+    <input type="search" placeholder="Search">
       <section>
        <i class="fas fa-redo"></i>&nbsp;
        <i class="fas fa-list"></i>&nbsp;
@@ -32,25 +41,38 @@
     <a href="#archive"><i class="fas fa-archive">&nbsp;&nbsp;&nbsp;</i>Archive</a>
     <a href="#bin"><i class="far fa-trash-alt">&nbsp;&nbsp;&nbsp;</i>Bin</a>
   </div>
+  <div class="note-container">
   <div class="note">
-    <!-- <input class="material-input" placeholder="Take a note..."  type="text">  -->
+    <input class="material-input" placeholder="Take a note..."  type="text"> 
     <div class="logo">
-    <i class="fas fa-paint-brush"></i>&nbsp;&nbsp;
+    <i class="fas fa-check-square titleIcon list-check "></i>&nbsp;&nbsp;
     <i class="far fa-bell"></i>&nbsp;&nbsp;
     <i class="far fa-image"></i>&nbsp;&nbsp;
+  </div>
 </div>
-    <!-- <div class="container my-3 mt-4"> -->
-        <div class="card-body">
-          <div class="form-group">
-            <textarea class="form-control" placeholder="Take a note..." id="addTxt" rows="2"></textarea>
-          
-          <button class="btn btn-primary mt-2" id="addBtn" >Close</button>
-        </div>
-        </div>
-      </div>
-      <div id="notes" class="row container-fluid"></div>
-    </div>
+</div>
+
+<div class="note-container2">
+<input class="child1" placeholder="Title" type="text">
+<input class="child2" autocomplete="off" placeholder="Take a note..." type="text"><br>
+<div class="mainBottomIcons">
+  <span><button class="far fa-bell bottomIcons"></button></span>&nbsp;&nbsp;&nbsp;
+  <!-- <span><button class="fa fa-user-plus bottomIcons"></button></span> -->
+  <span><button class="fa-solid fa-user"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="fa-regular fa-image"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="fa-light fa-store"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="fa-thin fa-thumbtack"></button></span>&nbsp;&nbsp;&nbsp;
+  <i class="fa-duotone fa-folder-arrow-down"></i>
+  <span><button class="fa-solid fa-arrow-rotate-right"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="far fa-bell-plus"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="fa-solid fa-arrow-rotate-left"></button></span>&nbsp;&nbsp;&nbsp;
+  <span><button class="cls-button">Close</button></span>
+</div>
+</div>  
+    <div class="notes-background">
+      
+    </div> 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="Js/app.js"></script>
   </body>
 </html>
+

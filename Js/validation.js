@@ -21,8 +21,8 @@ const showError = (input, message, e) => {
 };
 
 const showSuccess = (input, e) => {
-  document.getElementById(input).textContent = "";
-  document.getElementById(e).classList.remove("formError");
+  // document.getElementById(input).textContent = "";
+  // document.getElementById(e).classList.remove("formError");
 };
 let email
 const checkMail = (textid, errid) => {
@@ -141,42 +141,30 @@ const confirmPassword = (textid, errid) => {
   return valid;
 };
 
-const sumbit =() =>{
-console.log("hiii");
-  var valid =  checkMail('email','emailvalid')
-  ||
-  confirmMail('reentermail','forgomailvalidation')
+// const sumbitforgot =async() =>{
+// console.log("hiii");
+//   var valid =  checkMail('email','emailvalid')
+//   ||
+//   confirmMail('reentermail','forgomailvalidation') 
+//   console.log(valid);
+//   if(valid){
+//     let data = {
+//       "email":email 
+//   }
+//   getvals('user/userSignUp', data, "POST")
+//   .then((response)=>{
+//   console.log(response);
+//   if((response.status>=200) || (response.status<=299) ){
+//     window.location.href = "/dashboardpage.html";
    
-  console.log(valid);
+//    }
+//   })
+//   .catch((error)=>{
+//   console.log(error);
+//   })
+// }}
+  
 
-  if(valid){
-    let data = {
-      
-      "email":email ,
-    //   "password": password
-  }
-  console.log(data);
-   let result= postMethod('user/userSignUp', data);
-   if(result.status==200||299){
-    window.location.href = "http://127.0.0.1:5500/dashboardpage.html";
-   }
-  }
-}
-const submitlogin=()=>{
-    var valid =  checkMail('email','emailvalid')
-    ||
-    newPassword('password','passwordvalidation')
-
-  console.log(valid);
-  if(valid){
-    let data = {
-      "email":email ,
-      "password": password
-  }
-  console.log(data);
-
-  }
-}
  const submitsignup= async()=>{
   var valid =  checkFirstName('firstname','firstnamevalidation')
   ||
@@ -196,11 +184,40 @@ if(valid){
     "password": document.getElementById("reentermail").value
 }
 console.log(data);
-getvals('user/userSignUp', data, "POST")
+getvals('http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp', data, "POST")
 .then((response)=>{
 console.log(response);
 if((response.status>=200) || (response.status<=299) ){
-  window.location.href = "../dashboardpage";
+  window.location.href = "../dashboardpage.html";
+ 
+ }
+})
+.catch((error)=>{
+console.log(error);
+})
+
+}
+}
+
+const submitlogin= async()=>{
+  var valid =  checkMail('email','emailvalid')
+  ||
+  checkPassword('password','passwordvalidation')
+
+console.log(valid);
+if(valid){
+  let data = {
+    "email": document.getElementById("email").value,
+    "password": document.getElementById("password").value
+}
+console.log(data);
+getvals('http://fundoonotes.incubation.bridgelabz.com/api/user/login', data, "POST")
+.then((response)=>{
+console.log(response);
+localStorage.setItem("token",response.id);
+console.log(response.id);
+if(response.status>=200 || response.status<=299 ){
+  window.location.pathname = "../dashboardpage.html";
  
  }
 })

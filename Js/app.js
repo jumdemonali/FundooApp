@@ -41,13 +41,13 @@ function showNotes(){
       </div>`;
         
     });
-    let notesEle=document.getElementById("notes");
-    if(notesObj.length!=0){
-        notesEle.innerHTML=html;
-    }
-    else{
-        notesEle.innerHTML=`Nothing to show! Use "Add a Note" section above to add notes`;
-    }
+    // let notesEle=document.getElementById("notes");
+    // if(notesObj.length!=0){
+    //     notesEle.innerHTML=html;
+    // }
+    // else{
+    //     notesEle.innerHTML=`Nothing to show! Use "Add a Note" section above to add notes`;
+    // }
 }
 //function to delete note
 function deleteNotes(index){
