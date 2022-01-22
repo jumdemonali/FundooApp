@@ -8,17 +8,28 @@ window.addEventListener("DOMContentLoaded",function(){
   let title,desc;
   let descriptionInput=document.querySelector(".child2");
   let notesContainer=document.querySelector(".notes-background");
+  let archive=false;
+  let archiveButton=document.querySelector("#Archive");
   noteContainerOne.addEventListener("click",function(e){
     e.stopPropagation();
     noteContainerOne.style.display="none";
     noteContainerTwo.style.display="flex";
   })
+  archiveButton.addEventListener("click",function(e){
+    e.stopPropagation();
+    archive=true;
+  })
+ 
   requirejs(['../Service/dataservices.js'], (methods) => {
     methods.getNotes().then((resp)=>{
       console.log(resp.data.data.data);
       let noteArray=resp.data.data.data;
-      notesContainer.innerHTML="abc";
-      notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox"></div>`).join('');
+      // notesContainer.innerHTML="abc";
+      notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox">
+      <div>${note.title}</div>
+      <i class="bi-alarm"></i>
+      <div>${note.description}</div>
+      </div>`).join('');
     }).catch((error)=>{
       console.log(error);
     })
@@ -35,7 +46,8 @@ close.addEventListener('click',function(e){
   requirejs(['../Service/dataservices.js'], (methods) => {
    let obj={
      title:title,
-     description:desc
+     description:desc,
+     isArchived:archive
    }
    methods.addNotes(JSON.stringify(obj)).then((resp)=>{
      console.log(resp);
