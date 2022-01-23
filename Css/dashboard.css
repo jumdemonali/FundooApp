@@ -332,6 +332,62 @@ body {
     margin-left: 250px;
     border: 1px solid red;
 }
+.color1{
+  height: 39px;
+  width: 39px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color2{
+  height: 39px;
+  width: 39px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color3{
+  height: 39px;
+  width: 39px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color4{
+  height: 39px;
+  width: 39px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color5{
+  height: 39px;
+  width: 39px;
+  background-color: teal;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color6{
+  height: 39px;
+  width: 39px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color7{
+  height: 39px;
+  width: 39px;
+  background-color: darkblue;
+  border-radius: 50%;
+  display: inline-block;
+}
+.color8{
+  height: 39px;
+  width: 39px;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+}
 .noteBox{
   display: flex;
   flex-wrap: inherit;
