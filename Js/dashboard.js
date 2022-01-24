@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded",function(){
   let notesContainer=document.querySelector(".notes-background");
   let archive=false;
   let archiveButton=document.querySelector("#Archive");
+  
   noteContainerOne.addEventListener("click",function(e){
     e.stopPropagation();
     noteContainerOne.style.display="none";
@@ -26,9 +27,15 @@ window.addEventListener("DOMContentLoaded",function(){
       let noteArray=resp.data.data.data;
       // notesContainer.innerHTML="abc";
       notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox">
-      <div>${note.title}</div>
-      <i class="bi-alarm"></i>
+      <div>${note.title}</div><br>
       <div>${note.description}</div>
+     <div class="logoSet"><i class="bi bi-bell"></i>
+     <i class="bi bi-person-plus"></i>
+      <a href="#" id="clrSelector" data-toggle="popover" data-html="true"> <i class="bi bi-palette"></i></a>
+     <i class="bi bi-image"></i>
+     <i class="bi bi-archive" id="Archive"></i>
+     <i class="bi bi-three-dots-vertical"></i></div>
+ 
       </div>`).join('');
     }).catch((error)=>{
       console.log(error);
@@ -65,4 +72,8 @@ window.addEventListener('click', function(e){
   noteContainerTwo.style.display="none";
   }
 })
-})
+const colors = ["#2ECC71","#AF7AC5","#F1948A","#A3E4D7","#F5B7B1","#F5B041","#DC7633","#F1C40F","#AAB7B8","#F1948A","#2ECC71","#F5B041"];
+let value=colors.map((color) =>`<div class="round-boxes" style="background-color:red" border:1px solid red";>Hello</div>`).join('');
+//  let value=`<div class="round-box" style="background-color: #92a8d1;"></div>`
+document.getElementById("clrSelector").setAttribute("data-content",value);
+})  
