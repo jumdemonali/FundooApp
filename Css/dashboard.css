@@ -144,6 +144,22 @@ input[type=text] {
   border-width: 0 0 0 4px;
   border-radius: 0.6em;
  
+}.smallBoxNote1{
+  margin-top: 10px;
+  margin-left: 10px;
+ 
+display: flex;
+justify-content: flex-start;
+}
+.smallBoxDesc1
+{
+  margin-top: 10px;
+  margin-left: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  width: 250px;
+  height: 30px;
 }
 .child1{
     width: 200px;
@@ -152,7 +168,7 @@ input[type=text] {
   display: flex;
  outline: none;
   border: 0;
-  margin: 0px;
+  margin: 10px;
  position: relative;
  justify-content: center;
   padding: 3px 3px 3px 3px;
@@ -254,9 +270,7 @@ border-left: tomato;
     align-items: flex-end;
   }
   
-div {
-  display: block;
-}
+
 body {
   background-color: #fff;
   color: #202124;
@@ -340,91 +354,87 @@ body {
     flex-direction: row;
     text-align: center;
     margin-top: 2%;
-    width: 82vw;
-    height: 60vh;
+    width: 80vw;
+    height: 400vh;
     margin-left: 250px;
     /* border: 1px solid red; */
 }
- .round-boxes{
-  height: 50px;
-  width: 50px;
-  /* background-color: #202124;  */
-  border: 1px solid red;
- }
 
-.color1{
+
+#red{
   height: 39px;
   width: 39px;
-  background-color: red;
+  background-color: #ff0000;
   border-radius: 50%;
   display: inline-block;
 }
-.color2{
+#orange{
   height: 39px;
   width: 39px;
-  background-color: orange;
+  background-color: #ffa500;
   border-radius: 50%;
   display: inline-block;
 }
-.color3{
+#yellow{
   height: 39px;
   width: 39px;
-  background-color: yellow;
+  background-color: #ffff00;
   border-radius: 50%;
   display: inline-block;
 }
-.color4{
+#green{
   height: 39px;
   width: 39px;
-  background-color: green;
+  background-color:  #00ff00;
   border-radius: 50%;
   display: inline-block;
 }
-.color5{
+#teal{
   height: 39px;
   width: 39px;
-  background-color: teal;
+  background-color: #008080;
   border-radius: 50%;
   display: inline-block;
 }
-.color6{
+#blue{
   height: 39px;
   width: 39px;
-  background-color: blue;
+  background-color:  #0000FF;
   border-radius: 50%;
   display: inline-block;
 }
-.color7{
+#darkblue{
   height: 39px;
   width: 39px;
-  background-color: darkblue;
+  background-color: #00008b ;
   border-radius: 50%;
   display: inline-block;
 }
-.color8{
+#purple{
   height: 39px;
   width: 39px;
-  background-color: purple;
+  background-color: #800080;
   border-radius: 50%;
   display: inline-block;
 }
 .noteBox{
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   border: 1px solid lightgray;
-  width: 6vw;
-   height: 20vh;
+  width: 250px;
+   height: 180px;
    margin: 10px;
     /* margin-left: 10%;
     margin-top:40px; */
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 .logoSet{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  
+  margin-top: 30px;
   justify-content: space-evenly;
 }
 .fa{

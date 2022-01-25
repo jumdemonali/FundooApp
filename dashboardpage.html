@@ -12,6 +12,8 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     /> -->
+    <link rel="stylesheet" href="../Css/dashboard.css">
+    <script src="./Js/dashboard.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -21,8 +23,7 @@
     integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
     crossorigin="anonymous"> </script>
     
-    <link rel="stylesheet" href="../Css/dashboard.css">
-    <script src="./Js/dashboard.js"></script>
+   
     <title>Keep Notes</title>
   </head>
   <body>
@@ -34,7 +35,7 @@
       <section>
         <i class="bi bi-arrow-clockwise"></i>&nbsp;
         <i class="bi bi-list"></i>&nbsp;
-       <i class="bi bi-gear"></i>&nbsp;
+        <i class="bi bi-gear"></i>&nbsp;
    </section>
    </header>
   </div>
@@ -62,7 +63,14 @@
 <div class="mainBottomIcons">
   <i class="bi bi-bell"></i>
   <i class="bi bi-person-plus"></i>
-   <a href="#" id="clrSelector" data-toggle="popover" data-html="true"> <i class="bi bi-palette"></i></a>
+  <a href="#" data-toggle="popover" data-content="<div class=clr id=red ></div>
+    <div class=clr id=orange data-a=#ffa500></div>
+    <div class=clr id=yellow></div>
+    <div class=clr id=green></div>
+    <div class=clr id=teal></div> 
+    <div class=clr id=blue></div>
+    <div class=clr id=darkblue></div>
+    <div class=clr id=purple></div>" data-html="true"> <i class="bi bi-palette"></i></a>
   <i class="bi bi-image"></i>
   <i class="bi bi-archive" id="Archive"></i>
   <i class="bi bi-three-dots-vertical"></i>
@@ -76,11 +84,9 @@
     <div class="notes-background">
       
     </div> 
-    <script>
-      $(document).ready(function(){
-          $('[data-toggle="popover"]').popover();   
-      });
-      </script>
+    <!-- <script>
+     
+      </script> -->
 
   </body>
 </html>
