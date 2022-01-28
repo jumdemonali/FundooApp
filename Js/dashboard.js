@@ -14,11 +14,12 @@ window.addEventListener("DOMContentLoaded",function(){
   let colorsOptions=document.querySelector(".clr");
   let clrs;
   var colorValue;
-  let colorOne=document.querySelector(".image1");
   let dropDownContainer=document.querySelector(".dropdown-content");
   let sidebarLogobtn=document.querySelector(".sidebarLogo");
   let sidebarbtn=document.querySelector(".sidebar");
-
+  let colorOne=document.querySelector(".dropdown-content");
+  let drop=document.querySelector(".imgPopup");
+ 
 
 
 //sidebar
@@ -41,17 +42,17 @@ window.addEventListener("DOMContentLoaded",function(){
 });
   })
 
-  $('body').on('click', '.clr', function(e) {
-    e.preventDefault()
-    console.log("hey From Color CLick")
-    console.log("Color = "+e.currentTarget.id);
-    colorValue=e.currentTarget.id;
-    console.log(colorValue)
-    titleInputOne.style.background=colorValue;
-    descriptionInput.style.background=colorValue;
-    noteContainerTwo.style.background=colorValue;
-    noteBox.style.background=colorValue;
-})
+//   $('body').on('click', '.clrDefine', function(e) {
+//     e.preventDefault()
+//     console.log("hey From Color CLick")
+//     console.log("Color = "+e.currentTarget.id);
+//     colorValue=e.currentTarget.id;
+//     console.log(colorValue)
+//     titleInputOne.style.background=colorValue;
+//     descriptionInput.style.background=colorValue;
+//     noteContainerTwo.style.background=colorValue;
+//     noteBox.style.background=colorValue;
+// })
 
   noteContainerOne.addEventListener("click",function(e){
     e.stopPropagation();
@@ -68,7 +69,7 @@ window.addEventListener("DOMContentLoaded",function(){
       console.log(resp.data.data.data);
       let noteArray=resp.data.data.data;
       // notesContainer.innerHTML="abc";
-      notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox" style="background-color:${note.clrs}">
+      notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox" style="background-color:${note.color}">
       <div class="smallBoxNote1">${note.title}</div><br>
       <div class="smallBoxDesc1">${note.description}</div>
      <div class="logoSet"><i class="bi bi-bell"></i>
@@ -187,13 +188,25 @@ window.addEventListener('click', function(e){
 $(document).ready(function(){
   $('[data-toggle="popover"]').popover();   
 });
-const colors = ["#2ECC71","#AF7AC5","#F1948A","#A3E4D7","#F5B7B1","#F5B041","#DC7633","#F1C40F","#AAB7B8","#F1948A","#2ECC71","#F5B041"];
-// let value=colors.map((color) =>`<div id=${color}
-// style="background-color:${color};  width:30px; height:25px; border-radius: 50%;
-//   margin: 2px 2px 2px 2px;"></div>`).join('');
-// document.getElementById("clrSelector").setAttribute("data-content",value);
-// })  
 
-// colorOne.innerHTML=colors.map((color)=>{`<div class=${color} style="background-color:${color}" id=${color} ></div>`).join('')})
-dropDownContainer.innerHTML=colors.map((color)=>
-`<div class=${color} style="background-color:${color}" id=${color} ></div>`).join('')})
+drop.addEventListener("mouseover",function(event){
+  event.preventDefault();
+clrMethod();
+})
+function clrMethod(){
+  const colors = ["#2ECC71","#AF7AC5","#F1948A","#A3E4D7","#F5B7B1","#F5B041","#DC7633","#F1C40F","#AAB7B8","#F1948A","#2ECC71","#F5B041"];
+  colorOne.innerHTML=colors.map((color)=>`<div class="clrDefine" style="background-color:${color}" id=${color}></div>`).join("")
+}
+$('body').on('click', '.clrDefine', function(e) {
+  e.preventDefault()
+  console.log("hey From Color CLick")
+  console.log("Color = "+e.currentTarget.id);
+  clrs=e.currentTarget.id;
+  console.log(clrs)
+  titleInputOne.style.background=clrs;
+  descriptionInput.style.background=clrs;
+  noteContainerTwo.style.background=clrs;
+  noteBox.style.background=clrs;
+})
+})
+

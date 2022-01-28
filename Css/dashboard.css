@@ -227,6 +227,32 @@ border-left: tomato;
 
   
   }
+  .colorPop{
+    display: inline-block;
+    position: relative;
+    border: 1px solid red;
+
+  }
+  .dropdown-content{
+    display: none;
+    border: 2px solid blue;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: transparent;
+    width: 500px;
+    height: 100px;
+    bottom: 100%;
+  }
+  .clrDefine{
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+    margin: 2px;
+  }
+  .colorPop:hover .dropdown-content{
+    display: flex;
+    flex-direction: row;
+  }
   
   /* Sidebar links */
   .sidebar a {
