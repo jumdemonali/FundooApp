@@ -212,6 +212,8 @@ border-left: tomato;
 
 }
 .sidebar {
+  display: none;
+  flex-direction: column;
     margin: 0;
     padding: 0;
     width: 200px;
@@ -239,6 +241,13 @@ border-left: tomato;
   .sidebar a.active {
     background-color:lightsalmon;
     color: white;
+  }
+  .sidebarLogo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding-left: 30px;
+    padding-top: 30px;
   }
   header{
     display: flex;
@@ -359,8 +368,17 @@ body {
     margin-left: 250px;
     /* border: 1px solid red; */
 }
-
-
+.dropdown-content{
+  display: none;
+  border: 2px solid red;
+  flex-wrap:wrap;
+  position: absolute;
+  background-color: transparent;
+  width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  bottom:100%;
+}
 #red{
   height: 39px;
   width: 39px;
