@@ -254,7 +254,7 @@ border-left: tomato;
     display: flex;
     flex-direction: row;
   }
-  .colorPop:hover .dropdown-contents{
+  .colorPop:hover .dropdown-content{
     display: flex;
     flex-direction: row;
   }

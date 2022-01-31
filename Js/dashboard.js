@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded",function(){
   let drop=document.querySelector(".imgPopup");
   let getAction="normal";
   
+  
 //sidebar
   window.addEventListener('click', function(e){   
     if (document.querySelector('.sidebarLogo').contains(e.target)){
@@ -85,26 +86,26 @@ window.addEventListener("DOMContentLoaded",function(){
         
           arr1=filterArr;
         }
-if(getAction=="archiveNoteDisplay")
+if(getAction=="archiveDisplayButtonClicked")
 {
   filterArr=noteArray.filter(function(note){
     if(note.isArchived==true && note.isDeleted==false)
     {
       return note;
     }
+   
 })
 arr1=filterArr;
 }
 if(getAction==="trashButtonClicked"){
-  filterArray = noteArray.filter(function(note){
-     if(note.isDeleted===true){
+  filterArr = noteArray.filter(function(note){
+     if(note.isDeleted===true && note.isArchived==false){
          console.log("Trash button if condition")
-         return note
+         return note;
      }
  })
- arr=filterArray;
-
-
+ arr1=filterArr;
+ console.log(arr1);
 }
 
         notesContainer.innerHTML = filterArr.map((note) =>`<div class="noteBox" style="background-color:${note.color}">
@@ -117,8 +118,8 @@ if(getAction==="trashButtonClicked"){
         <i class="image1 imgPopup bi bi-palette"></i>
         </div></a>
          <i class="bi bi-image"></i>
-         <i class="bi bi-archive archive" id=${note.id} ></i>
-         <i class="bi bi-trash" id=${note.id}></i>
+         <i class="bi bi bi-box-arrow-in-down archive" id=${note.id} ></i>
+         <i class="bi bi-trash delete" id=${note.id}></i>
          <i class="bi bi-three-dots-vertical"></i></div>
      
           </div>`).join('');
@@ -132,6 +133,21 @@ if(getAction==="trashButtonClicked"){
 
 
   getNotes();
+
+  $('body').on('click', '.sidearchive', function(e) {
+    e.preventDefault()
+   getAction="archiveDisplayButtonClicked";
+   getNotes();
+   console.log("Hey.Archive Button From Sidebar has been clicked")
+})
+
+$('body').on('click', '.sidetrash', function(e) {
+  console.log("hellooooo");
+    e.preventDefault()
+   getAction="trashButtonClicked";
+   getNotes();
+   console.log("Hey.Trash Button From Sidebar has been clicked")
+})
      
 
 titleInputOne.addEventListener('change',function(e){
@@ -180,7 +196,7 @@ $('body').on('click', '.archive', function(e) {
 });
 
 //delete
-$('body').on('click', '.bi-trash', function(e) {
+$('body').on('click', '.delete', function(e) {
   e.preventDefault()
   requirejs(['../Service/dataservices.js'], (methods) => {
   let deleteobj ={
@@ -259,26 +275,11 @@ $('body').on('click', '.clrDefine', function(e) {
 })
 
 
-$('body').on('click', '#arhiveSidebar', function(e) {
+// $('body').on('click', '#arhiveSidebar', function(e) {
   
 
-})
+// })
 
-window.addEventListener('click', function(e){   
-   e.preventDefault()
-  document.querySelector('#archivebtn').contains(e.target)
-   console.log("isArchived");
-   getAction="archiveNoteDisplay";
-  
-   getNotes();
- 
-})
-$('body').on('click', '.bi-trash', function(e) {
-  e.preventDefault()
- getAction="trashButtonClicked";
- getNotes();
- console.log("Hey.Trash Button From Sidebar has been clicked")
-})
 })
 
 
