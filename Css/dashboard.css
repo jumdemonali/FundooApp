@@ -147,7 +147,7 @@ input[type=text] {
 }.smallBoxNote1{
   margin-top: 10px;
   margin-left: 10px;
- 
+ font-weight: 700;
 display: flex;
 justify-content: flex-start;
 }
@@ -167,6 +167,7 @@ justify-content: flex-start;
     position: absolute;
   display: flex;
  outline: none;
+ font-weight: 700;
   border: 0;
   margin: 10px;
  position: relative;
@@ -230,12 +231,11 @@ border-left: tomato;
   .colorPop{
     display: inline-block;
     position: relative;
-    border: 1px solid red;
-
+    
   }
   .dropdown-content{
     display: none;
-    border: 2px solid blue;
+    border: 1px solid black;
     flex-wrap: wrap;
     position: absolute;
     background-color: transparent;
@@ -243,13 +243,18 @@ border-left: tomato;
     height: 100px;
     bottom: 100%;
   }
-  .clrDefine{
+  .create{
     height: 29px;
     width: 29px;
     border-radius: 50%;
     margin: 2px;
+    
   }
   .colorPop:hover .dropdown-content{
+    display: flex;
+    flex-direction: row;
+  }
+  .colorPop:hover .dropdown-contents{
     display: flex;
     flex-direction: row;
   }
@@ -390,13 +395,12 @@ body {
     text-align: center;
     margin-top: 2%;
     width: 80vw;
-    height: 400vh;
+    height: 100vh;
     margin-left: 250px;
     /* border: 1px solid red; */
 }
 .dropdown-content{
   display: none;
-  border: 2px solid red;
   flex-wrap:wrap;
   position: absolute;
   background-color: transparent;
@@ -405,62 +409,17 @@ body {
   z-index: 1;
   bottom:100%;
 }
-#red{
-  height: 39px;
-  width: 39px;
-  background-color: #ff0000;
-  border-radius: 50%;
-  display: inline-block;
+.dropdown-contents{
+  display: none;
+  flex-wrap:wrap;
+  position: absolute;
+  background-color: transparent;
+  width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  bottom:100%;
 }
-#orange{
-  height: 39px;
-  width: 39px;
-  background-color: #ffa500;
-  border-radius: 50%;
-  display: inline-block;
-}
-#yellow{
-  height: 39px;
-  width: 39px;
-  background-color: #ffff00;
-  border-radius: 50%;
-  display: inline-block;
-}
-#green{
-  height: 39px;
-  width: 39px;
-  background-color:  #00ff00;
-  border-radius: 50%;
-  display: inline-block;
-}
-#teal{
-  height: 39px;
-  width: 39px;
-  background-color: #008080;
-  border-radius: 50%;
-  display: inline-block;
-}
-#blue{
-  height: 39px;
-  width: 39px;
-  background-color:  #0000FF;
-  border-radius: 50%;
-  display: inline-block;
-}
-#darkblue{
-  height: 39px;
-  width: 39px;
-  background-color: #00008b ;
-  border-radius: 50%;
-  display: inline-block;
-}
-#purple{
-  height: 39px;
-  width: 39px;
-  background-color: #800080;
-  border-radius: 50%;
-  display: inline-block;
-}
+
 .noteBox{
   display: flex;
   flex-direction: column;

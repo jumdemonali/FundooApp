@@ -15,13 +15,13 @@ window.addEventListener("DOMContentLoaded",function(){
   let clrs;
   var colorValue;
   let dropDownContainer=document.querySelector(".dropdown-content");
+  let arhiveSidebar=document.querySelector("#archivebtn");
   let sidebarLogobtn=document.querySelector(".sidebarLogo");
   let sidebarbtn=document.querySelector(".sidebar");
   let colorOne=document.querySelector(".dropdown-content");
   let drop=document.querySelector(".imgPopup");
- 
-
-
+  let getAction="normal";
+  
 //sidebar
   window.addEventListener('click', function(e){   
     if (document.querySelector('.sidebarLogo').contains(e.target)){
@@ -63,28 +63,76 @@ window.addEventListener("DOMContentLoaded",function(){
     e.stopPropagation();
     archive=true;
   })
- 
-  requirejs(['../Service/dataservices.js'], (methods) => {
-    methods.getNotes().then((resp)=>{
-      console.log(resp.data.data.data);
-      let noteArray=resp.data.data.data;
-      // notesContainer.innerHTML="abc";
-      notesContainer.innerHTML = noteArray.map((note) =>`<div class="noteBox" style="background-color:${note.color}">
-      <div class="smallBoxNote1">${note.title}</div><br>
-      <div class="smallBoxDesc1">${note.description}</div>
-     <div class="logoSet"><i class="bi bi-bell"></i>
-     <i class="bi bi-person-plus"></i>
-      <a href="#" id="clrSelector" data-toggle="popover" data-html="true" id=${note.id}> <i class="bi bi-palette"></i></a>
-     <i class="bi bi-image"></i>
-     <i class="bi bi-archive archive" id=${note.id} ></i>
-     <i class="bi bi-trash" id=${note.id}></i>
-     <i class="bi bi-three-dots-vertical"></i></div>
- 
-      </div>`).join('');
-    }).catch((error)=>{
-      console.log(error);
-    })
-  })
+
+  function getNotes()
+  {
+    let arr1=[];
+    let filterArr=[];
+    requirejs(['../Service/dataservices.js'], (methods) => {
+      methods.getNotes().then((resp)=>{
+        console.log(resp.data.data.data);
+        let noteArray=resp.data.data.data;
+        if(getAction=="normal")
+        {
+          filterArr=noteArray.filter(function(note){
+            if(note.isArchived==false && note.isDeleted==false)
+            {
+              return note;
+            }
+          
+        })
+        console.log(filterArr);
+        
+          arr1=filterArr;
+        }
+if(getAction=="archiveNoteDisplay")
+{
+  filterArr=noteArray.filter(function(note){
+    if(note.isArchived==true && note.isDeleted==false)
+    {
+      return note;
+    }
+})
+arr1=filterArr;
+}
+if(getAction==="trashButtonClicked"){
+  filterArray = noteArray.filter(function(note){
+     if(note.isDeleted===true){
+         console.log("Trash button if condition")
+         return note
+     }
+ })
+ arr=filterArray;
+
+
+}
+
+        notesContainer.innerHTML = filterArr.map((note) =>`<div class="noteBox" style="background-color:${note.color}">
+          <div class="smallBoxNote1">${note.title}</div><br>
+          <div class="smallBoxDesc1">${note.description}</div>
+         <div class="logoSet"><i class="bi bi-bell"></i>
+         <i class="bi bi-person-plus"></i>
+          <a href="#" data-toggle="popover" data-html="true" id=${note.id}><div class="colorPop">
+          <div class="dropdown-content"></div>
+        <i class="image1 imgPopup bi bi-palette"></i>
+        </div></a>
+         <i class="bi bi-image"></i>
+         <i class="bi bi-archive archive" id=${note.id} ></i>
+         <i class="bi bi-trash" id=${note.id}></i>
+         <i class="bi bi-three-dots-vertical"></i></div>
+     
+          </div>`).join('');
+        }).catch((error)=>{
+          console.log(error);
+        })
+      })
+        return arr1;
+        console.log(filterArr);
+  }
+
+
+  getNotes();
+     
 
 titleInputOne.addEventListener('change',function(e){
   title=e.target.value;
@@ -139,6 +187,7 @@ $('body').on('click', '.bi-trash', function(e) {
       noteIdList : [e.currentTarget.id],
       isDeleted : true,     
 }
+console.log(deleteobj)
       methods.trashNotes(JSON.stringify(deleteobj)).then((resp)=>{
         console.log(resp);
       }).catch((error)=>{
@@ -208,5 +257,28 @@ $('body').on('click', '.clrDefine', function(e) {
   noteContainerTwo.style.background=clrs;
   noteBox.style.background=clrs;
 })
+
+
+$('body').on('click', '#arhiveSidebar', function(e) {
+  
+
 })
+
+window.addEventListener('click', function(e){   
+   e.preventDefault()
+  document.querySelector('#archivebtn').contains(e.target)
+   console.log("isArchived");
+   getAction="archiveNoteDisplay";
+  
+   getNotes();
+ 
+})
+$('body').on('click', '.bi-trash', function(e) {
+  e.preventDefault()
+ getAction="trashButtonClicked";
+ getNotes();
+ console.log("Hey.Trash Button From Sidebar has been clicked")
+})
+})
+
 
